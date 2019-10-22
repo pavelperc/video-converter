@@ -1,4 +1,4 @@
-package isd.video_converter
+package isd.videoConverter
 
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,4 +1,4 @@
-package isd.video_converter
+package isd.videoConverter
 
 import org.amshove.kluent.shouldBeFalse
 import org.amshove.kluent.shouldBePositive

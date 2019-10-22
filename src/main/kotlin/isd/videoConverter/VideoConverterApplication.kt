@@ -1,4 +1,4 @@
-package isd.video_converter
+package isd.videoConverter
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

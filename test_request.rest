@@ -1,0 +1,32 @@
+#POST http://localhost:8080/api/convert
+#Content-Type: application/json
+#
+#{
+#  "video": {
+#    "frameRate": 5
+#  },
+#  "format": "mp4"
+#}
+
+###
+POST http://localhost:8080/api/convert
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="settings"
+
+{
+  "video": {
+    "frameRate": 5
+  },
+  "format": "mp4"
+}
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="bunny.mp4"
+
+< test_video/bunny.mp4
+--WebAppBoundary--
+
+###
+

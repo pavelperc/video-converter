@@ -28,5 +28,16 @@ Content-Disposition: form-data; name="file"; filename="bunny.mp4"
 < test_video/bunny.mp4
 --WebAppBoundary--
 
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+
+client.test("Response content-type is json", function() {
+  var type = response.contentType.mimeType;
+  client.assert(type === "video/*", "Expected 'video/*' but received '" + type + "'");
+});
+%}
+
 ###
 

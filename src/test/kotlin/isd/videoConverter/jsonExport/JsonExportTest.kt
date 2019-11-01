@@ -1,12 +1,9 @@
 package isd.videoConverter.jsonExport
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import isd.videoConverter.settingsJson.ConversionSettings
 import isd.videoConverter.settingsJson.VideoSettings
-import org.junit.Assert.*
 import org.junit.Test
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationConfig
-import org.springframework.boot.convert.ApplicationConversionService.configure
 
 
 class JsonExportTest {
@@ -25,7 +22,7 @@ class JsonExportTest {
         val mapper = ObjectMapper()
         
         val str = mapper
-//                .writerWithDefaultPrettyPrinter()
+                .writerWithDefaultPrettyPrinter()
                 .writeValueAsString(settings)
         println(str)
     }

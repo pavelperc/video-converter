@@ -2,10 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Video converter</title>
+    <title>Video dconverter</title>
 </head>
 <body>
 <h1>This is the index page.</h1>
-To convert the file, use <a href="/api/convert">/api/convert</a> path.
+<div>
+    To convert the file, use <a href="/api/convert">/api/convert</a> path and a post request.
+</div>
+<h2>
+    Test conversion:
+</h2>
+
+
+
+<form id="conversionForm" action="/api/convert" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">Choose file to upload: </label>
+    </div>
+    <div>
+        <input type="file" id="file" name="file">
+    </div>
+    <div>
+        <label for="settings">
+            Json settings:
+        </label>
+    </div>
+    <div>
+        <textarea id="settings" name="settings" cols="40" rows="12">
+{
+  "format" : "mp4",
+  "video" : {
+    "codec" : "mpeg4",
+    "bitRate" : 1,
+    "frameRate" : 10
+  },
+  "audio" : null
+}</textarea>
+    </div>
+</form>
+<div>
+    <button onclick="submitForm()">Submit</button>
+</div>
+<script>
+    function submitForm() {
+        var form = document.getElementById("conversionForm");
+        if (form.file.value === "") {
+            window.alert("File not present");
+            return
+        }
+        form.submit();
+    }
+</script>
+
 </body>
 </html>
